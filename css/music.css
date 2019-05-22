@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.otherArea {
+  height: 466px;
+  background-color: #fff;
+}
+.bottomMusicBlock {
+  display: flex;
+  background-color: #2e2e2e;
+  width: 100%;
+  height: 44px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid black;
+}
+.bottomMusicBlock > .leftArea {
+  flex: 1;
+  height: 44px;
+  min-width: 160px;
+}
+.bottomMusicBlock > .leftArea > #prev {
+  float: right;
+  width: 36px;
+  height: 30px;
+  background: url("../img/botton.png") -80px 0px;
+  margin: 10px 0 0 0;
+  cursor: pointer;
+}
+.bottomMusicBlock > .leftArea > #play {
+  float: right;
+  width: 36px;
+  height: 36px;
+  background: url("../img/botton.png") -40px 0px;
+  margin: 6px 8px 0 6px;
+  cursor: pointer;
+}
+.bottomMusicBlock > .leftArea > #pause {
+  float: right;
+  width: 36px;
+  height: 36px;
+  background: url("../img/botton.png") 0px 0px;
+  margin: 6px 6px 0 8px;
+  cursor: pointer;
+}
+.bottomMusicBlock > .leftArea > #next {
+  float: right;
+  width: 36px;
+  height: 30px;
+  background: url("../img/botton.png") -110px 0px;
+  margin: 10px 15% 0 0px;
+  cursor: pointer;
+}
+.bottomMusicBlock > .middleArea {
+  position: relative;
+  height: 44px;
+  min-width: 600px;
+}
+.bottomMusicBlock > .middleArea > .songName {
+  color: #e2e2e2;
+  font-size: 14px;
+}
+.bottomMusicBlock > .middleArea > .currentTime {
+  color: #a1a1a1;
+  position: absolute;
+  top: 18px;
+  left: 510px;
+  font-size: 14px;
+}
+.bottomMusicBlock > .middleArea > .progressBar {
+  position: absolute;
+  top: 25px;
+  width: 500px;
+  height: 8px;
+  background-color: #171717;
+}
+.bottomMusicBlock > .middleArea > .progressBarGo {
+  position: absolute;
+  top: 25px;
+  width: 0%;
+  height: 8px;
+  background-color: #C70C07;
+}
+.bottomMusicBlock > .middleArea > .progressBarHead {
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/ball.png") no-repeat;
+}
+.bottomMusicBlock > .rightArea {
+  position: relative;
+  flex: 1;
+  height: 44px;
+  min-width: 80px;
+}
+.bottomMusicBlock > .rightArea > .volumeButton {
+  float: left;
+  width: 25px;
+  height: 25px;
+  background: url("../img/volume.png");
+  margin: 10px 0px 0 15%;
+  cursor: pointer;
+}
+.bottomMusicBlock > .rightArea > .volumeBlock {
+  z-index: 1;
+  float: left;
+  position: relative;
+  background-color: #2e2e2e;
+  width: 35px;
+  height: 115px;
+  margin: -117px 0 0 -30px;
+  border: 1px solid black;
+  border-color: black;
+}
+.bottomMusicBlock > .rightArea > .volumeBlock > .volumeBar {
+  position: absolute;
+  bottom: 8px;
+  left: 15px;
+  height: 100px;
+  width: 5px;
+  background-color: #171717;
+}
+.bottomMusicBlock > .rightArea > .volumeBlock > .volumeBarGo {
+  position: absolute;
+  bottom: 8px;
+  left: 15px;
+  height: 0;
+  width: 5px;
+  background-color: #C70C07;
+}
+.bottomMusicBlock > .rightArea > .volumeBlock > .volumeBarHead {
+  position: absolute;
+  bottom: 50px;
+  left: 9px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/ball.png") no-repeat;
+}
+.bottomMusicBlock > .rightArea > .modelButtonOne {
+  float: left;
+  width: 25px;
+  height: 25px;
+  background: url("../img/xunhuan.png");
+  margin: 12px 0px 0 10px;
+  cursor: pointer;
+}
+.bottomMusicBlock > .rightArea > .modelButtonTwo {
+  float: left;
+  width: 25px;
+  height: 25px;
+  background: url("../img/danqu.png");
+  margin: 13px 0px 0 10px;
+  cursor: pointer;
+}
+.bottomMusicBlock > .rightArea > .modelButtonThree {
+  float: left;
+  width: 25px;
+  height: 25px;
+  background: url("../img/suiji.png");
+  margin: 13px 0px 0 10px;
+  cursor: pointer;
+}
+.bottomMusicBlock > .rightArea > .listButton {
+  float: left;
+  width: 25px;
+  height: 25px;
+  background: url("../img/list.png");
+  margin: 11px 0px 0 10px;
+  cursor: pointer;
+}
+.bottomMusicBlock > .rightArea > .musicList {
+  position: absolute;
+  top: -206px;
+  left: -150px;
+  background-color: #2e2e2e;
+  width: 300px;
+  height: 205px;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listHead {
+  max-width: 300px;
+  height: 30px;
+  line-height: 30px;
+  color: #e2e2e2;
+  background-color: #171717;
+  font-size: 15px;
+  padding-left: 20px;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent {
+  max-width: 300px;
+  height: 175px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent::-webkit-scrollbar {
+  width: 6px;
+  background-color: #000;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent::-webkit-scrollbar-thumb {
+  background-color: #868686;
+  width: 4px;
+  border-radius: 5px;
+  border: 1px solid #a6a6a6;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent::-webkit-scrollbar-button {
+  display: none;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent > .musicTable {
+  width: 100%;
+  color: #e2e2e2;
+  table-layout: fixed;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent > .musicTable .tableList {
+  font-size: 14px;
+  line-height: 25px;
+  height: 25px;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent > .musicTable .tableList .songNameList {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent > .musicTable .tableList .musicDelete {
+  height: 25px;
+  background: url("../img/delete.png") no-repeat left center;
+  cursor: pointer;
+}
+.bottomMusicBlock > .rightArea > .musicList > .listContent > .musicTable .listActive {
+  background-color: #171717;
+  color: #fff;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BottomMusicBlock</title>
+  <link rel="stylesheet" type="text/css" href="./css/music.css"/>
+  <script src='./js/vue.min.js'></script>
+</head>
+<body>
+  <div class="otherArea" onclick="closeShow()"></div>
+  <div class="bottomMusicBlock" id="bottomMusicBlock">
+    <audio ref="audio" @canplay="getDuration" @timeupdate="updateTime" @ended="nextSong">
+      Your browser does not support the audio element.
+    </audio>
+    <div class=leftArea>
+      <div title="下一首" id="next" @click="nextSong"></div>    
+      <div title="播放" id="play" @click="play" v-show="playButtonShow"></div>
+      <div title="暂停" id="pause" @click="pause" v-show="!playButtonShow"></div>
+      <div title="上一首" id="prev" @click="prevSong"></div>
+    </div>
+    <div class="middleArea">
+      <div class="progressBar" @mouseup="skip"></div>
+      <div class="progressBarGo" @mouseup="skip" :style="{width:progressBarGo}"></div>
+      <div class="progressBarHead" @mousedown="dragBarHead" :style="{left:progressBarHead}"></div>
+      <div class="songName">{{songname}}&nbsp&nbsp-&nbsp&nbsp{{artist}}</div>
+      <div class="currentTime">{{currentTimeDisp}}/{{totalTimeDisp}}</div>
+    </div>
+    <div class="rightArea">
+      <div class="volumeButton" @click="volume"></div>
+      <div class="volumeBlock" id="volumeBlock" v-show="volumeShow">
+        <div class="volumeBar" @mouseup="volumeAdd"></div>
+        <div class="volumeBarGo" @mouseup="volumeDown" :style="{height:volumeData}"></div>  
+        <div class="volumeBarHead" @mousedown="dragVolumeHead" :style="{bottom:volumeBarHead}"></div>
+      </div>
+      <div class="modelButtonOne" title="循环" @click="changeModelOne" v-show="modelOneShow"></div>
+      <div class="modelButtonTwo" title="单曲循环" @click="changeModelTwo" v-show="modelTwoShow"></div>
+      <div class="modelButtonThree" title="随机" @click="changeModelThree" v-show="modelThreeShow"></div>
+      <div class="listButton" @click="listSong"></div>
+      <div class="musicList" id="musicList" v-show="listShow">
+        <div class="listHead">播放列表</div>
+        <div class="listContent">
+          <table class="musicTable" cellspacing="0" cellpadding="0">
+            <!-- 必须在第一行设置表格固定宽度 -->
+            <tr>
+              <td width="145px"></td>
+              <td width="130px"></td>
+              <td width="25px"></td>
+            </tr>
+            <tr class="tableList" v-for="(item, index) of songs" :index="index" :key="item.id" @mouseenter="mouseEnterList(index)" @mouseleave="mouseLeaveList()" :class="{listActive:index==listisActive}">
+              <td class="songNameList" @click="listPick(index)">&nbsp&nbsp&nbsp&nbsp{{item.title}}</td>
+              <td class="artistList">&nbsp&nbsp&nbsp&nbsp{{item.artist}}</td>
+              <td class="musicDelete" style="width:10%" @click="listDelete(index)" v-show="index==listisActive"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='./js/data.js'></script> 
+  <script src='./js/main.js'></script>
+</body>
+</html>
